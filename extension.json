@@ -1,0 +1,43 @@
+{
+  "name": "Neon",
+  "description": "Last.fm activity scrobbler for Google Play Music",
+
+  "permissions": [
+    "declarativeContent",
+    "storage",
+    "unlimitedStorage"
+  ],
+
+  "background": {
+    "scripts": [
+      "common.js",
+      "background/common.js",
+
+      "background/messaging/messaging.js",
+      "background/messaging/services/library.js",
+      "background/messaging/services/storage.js",
+      "background/messaging/services/scrobble.js",
+
+      "background/callback/callback.js",
+      "background/main/main.js",
+      "background/migrate/migrate.js"
+    ]
+  },
+  "options_ui": {
+    "page": "configuration/configuration.html",
+    "open_in_tab": true
+  },
+
+  "modules": {
+    "browsers": [
+      "neon-extension-browser-webextension",
+      "neon-extension-browser-chrome"
+    ],
+    "destinations": [
+      "neon-extension-destination-lastfm"
+    ],
+    "sources": [
+      "neon-extension-source-googlemusic"
+    ]
+  }
+}
