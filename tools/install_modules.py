@@ -15,16 +15,16 @@ def install_modules(branch):
         try:
             code = install_module(name, branch)
         except Exception as ex:
-            print ' - Unable to install "%s" - %s\n' % (name, ex)
+            print '[NeApp/%s] Exception raised: %s\n' % (name, ex)
             continue
 
         # Process error returned
         if code != 0:
-            print ' - Unable to install "%s" - Process exited with return code: %s\n' % (name, code)
+            print '[NeApp/%s] Exited with return code: %s\n' % (name, code)
             continue
 
         # Module installed
-        print ' - Installed "NeApp/%s#%s"\n' % (name, branch)
+        print '[NeApp/%s] Installed\n' % (name,)
 
 
 def install_module(name, current_branch):
@@ -32,7 +32,7 @@ def install_module(name, current_branch):
         if not module_exists(name, branch):
             continue
 
-        print 'Installing "%s" (branch: %r)' % (name, branch)
+        print '[NeApp/%s#%s] Installing...' % (name, branch)
 
         # Install module
         return subprocess.call([
