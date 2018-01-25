@@ -3,6 +3,7 @@ import json
 import os
 import subprocess
 import sys
+import urllib2
 
 
 PACKAGE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
@@ -14,23 +15,44 @@ def install_modules(branch):
         try:
             code = install_module(name, branch)
         except Exception as ex:
-            print 'Unable to install "%s" - %s' % (name, ex)
+            print ' - Unable to install "%s" - %s\n' % (name, ex)
             continue
 
         # Process error returned
         if code != 0:
-            print 'Unable to install "%s" - Process exited with return code: %s' % (name, code)
+            print ' - Unable to install "%s" - Process exited with return code: %s\n' % (name, code)
             continue
 
         # Module installed
-        print 'Installed "NeApp/%s#%s"' % (name, branch)
+        print ' - Installed "NeApp/%s#%s"\n' % (name, branch)
 
 
-def install_module(name, branch):
-    return subprocess.call([
-        'npm', 'install',
-        'NeApp/%s#%s' % (name, branch)
-    ])
+def install_module(name, current_branch):
+    for branch in [current_branch, 'develop', 'master']:
+        if not module_exists(name, branch):
+            continue
+
+        print 'Installing "%s" (branch: %r)' % (name, branch)
+
+        # Install module
+        return subprocess.call([
+            'npm', 'install',
+            'NeApp/%s#%s' % (name, branch)
+        ])
+
+
+def module_exists(name, branch):
+    request = urllib2.Request('https://github.com/NeApp/%s/tree/%s' % (name, branch))
+    request.get_method = lambda: 'HEAD'
+
+    # Request branch page
+    try:
+        response = urllib2.urlopen(request)
+    except:
+        return False
+
+    # Ensure branch exists
+    return 200 <= response.getcode() <= 300
 
 
 def list_modules():
