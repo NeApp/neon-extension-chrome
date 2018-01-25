@@ -19,7 +19,7 @@ export function createTask(environment) {
         return createZip({
             archive: Path.join(
                 Constants.BuildDirectory.Root, environment,
-                buildDistributionName(Extension.getVersion())
+                buildDistributionName(Extension.getVersionName(environment))
             ),
 
             source: Path.join(Constants.BuildDirectory.Root, environment, 'unpacked'),
