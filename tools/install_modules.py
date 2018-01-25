@@ -27,10 +27,10 @@ def install_modules(branch):
 
 
 def install_module(name, branch):
-    return subprocess.call(
-        ['npm', 'install', 'NeApp/%s#%s' % (name, branch)],
-        shell=True
-    )
+    return subprocess.call([
+        'npm', 'install',
+        'NeApp/%s#%s' % (name, branch)
+    ])
 
 
 def list_modules():
