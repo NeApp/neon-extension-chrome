@@ -3,6 +3,7 @@ import Gulp from 'gulp';
 import Path from 'path';
 
 import Extension from '../core/extension';
+import Travis from '../core/travis';
 import {getOutputDirectory, getTaskName} from '../core/helpers';
 
 
@@ -50,7 +51,7 @@ export function buildDescriptor(environment) {
 
         'version': {
             'name': Extension.getVersionName(environment),
-            'vcs_tag': Extension.getCommit()
+            'vcs_tag': Travis.tag,
         },
 
         'files': [
