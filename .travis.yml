@@ -9,12 +9,17 @@ script:
 - npm run test
 - npm run build
 deploy:
-  provider: releases
+- provider: releases
   api_key:
     secure: AKZefc+oQWOuXAK7ytS2tFgEmenpGP8gHijYA8BZNqA4HhwWWYYFWAHaGVrVGgEcnHAJBAqee/smw2przpka12IqccyfhvSng0uhPU7HvWdqO/VDW38d+JmneExiCvn1Nw7N+xwoX65FRn/jDlsooUeAqk0rn5Gj6CBbzk6yf7o=
   skip_cleanup: true
   file_glob: true
-  file: "build/production/Neon*.zip"
+  file: build/production/Neon*.zip
   on:
     repo: NeApp/neon-extension-chrome
     tags: true
+- provider: bintray
+  key:
+    secure: PlwDaiEyaObAHNmRMXz4yNTlmlboJYGpEazVL6Q4EN/nDy4JrxC08rTb3cTo4hDJCBaDX1+6m0Cc/Q5vXw3ZVLqosFVJu/3rpw3DkS+v0XaSKlq/hF6PBCCsp6Nnn9HnnMQHz3MPZ8LceldAzStG2zmTXCt9Q5Nea8a4QRR03N9UfcOX+ZxJOSGkXweUyDlYqBr2rd3VYRNPEgsv5kiBgokIozMAHuO1ZKEas+un7VpwrD6YutYfuhiEZhP0c+Fct00IISf0D8o6GhZMkhuW+1ehW1ow+exPVuoMZ8S0nvJea9r2LS7etaEmyAWa1i38bUVpFZT2Y9hzaltv3lSDTrHaswKYU8s5VjMhXpcgQabIiRYaCD3vuisTk7taktpG5by7n6kVkI+r8G3+Qdks0yUe6uizJnNWiaPy4mSacB9n4dbF21GEmPbT+43a7/HUHRKDj1Ay9E6nAdCawqM6jFflMf5ykUH4o30EIhkv/hvOsCU0tYWrzCXBH61SXpGJr5F7D0hkQmVnfRigfw6W95WC3gid+xTs7vM/7sZCIjTURxf4Vi1+EetzpUXnYTI0TCb71HXZjIKhDoYD/Jw/5H9PhkEXIXCcZ2kxw+gXg0B+NqRV/Gp4Lny8HLoZgnZKS+Ku/M6a+TmnLWC5z1It2SkSjzGUUNWK/HiW7hKB/Es=
+  file: build/production/bintray.json
+  user: neapp-ci
