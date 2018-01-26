@@ -52,6 +52,13 @@ export function buildDescriptor(environment) {
         'version': {
             'name': Extension.getVersionName(environment),
             'vcs_tag': Travis.tag,
+
+            "attributes": [
+                {"name": "branch", "type": "string", "values": [Extension.branch]},
+                {"name": "commit", "type": "string", "values": [Extension.commit]},
+
+                {"name": "build_number", "type": "number", "values": [parseInt(Travis.build_number, 10)]}
+            ],
         },
 
         'files': [
