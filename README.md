@@ -1,5 +1,5 @@
 # Neon Extension for Chrome
-[![](https://img.shields.io/travis/NeApp/neon-extension-chrome.svg)](https://travis-ci.org/NeApp/neon-extension-chrome) ![](https://img.shields.io/github/license/NeApp/neon-extension-chrome.svg)
+[![](https://img.shields.io/travis/NeApp/neon-extension-chrome.svg)](https://travis-ci.org/NeApp/neon-extension-chrome) [![](https://img.shields.io/github/release/NeApp/neon-extension-chrome.svg?label=stable)](https://github.com/NeApp/neon-extension-chrome/releases) [![](https://img.shields.io/bintray/v/neapp/neon-extension/neon-extension-chrome.svg?label=latest)](https://bintray.com/neapp/neon-extension/neon-extension-chrome) ![](https://img.shields.io/github/license/NeApp/neon-extension-chrome.svg)
 
 ### Issues
 
