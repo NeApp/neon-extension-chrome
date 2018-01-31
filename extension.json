@@ -33,7 +33,9 @@
       "neon-extension-browser-chrome"
     ],
     "destinations": [
-      "neon-extension-destination-lastfm"
+      "neon-extension-destination-lastfm",
+      "neon-extension-destination-librefm",
+      "neon-extension-destination-listenbrainz"
     ],
     "sources": [
       "neon-extension-source-googlemusic"
