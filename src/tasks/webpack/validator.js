@@ -134,7 +134,9 @@ export class Validator {
         this._checkDependencies('Dependency', Extension.package.dependencies, this.dependencies[environment][null]);
 
         // Ensure there are no unused module dependencies
-        Registry.list(environment).forEach((module) => {
+        Registry.list(environment, {
+            filter: (module) => module.type !== 'package'
+        }).forEach((module) => {
             this._checkDependencies(
                 'Dependency', module.package.dependencies, this.dependencies[environment][module.name],
                 module.name

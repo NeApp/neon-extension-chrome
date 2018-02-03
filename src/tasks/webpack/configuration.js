@@ -307,7 +307,9 @@ export function createConfiguration(environment, outputPath) {
 }
 
 function getBabelPaths(environment) {
-    let modules = Registry.list(environment);
+    let modules = Registry.list(environment, {
+        filter: (module) => module.type !== 'package'
+    });
 
     // Build list of babel includes
     let items = [];
@@ -336,7 +338,9 @@ function getBabelPaths(environment) {
 }
 
 function getModuleAliases(environment) {
-    return Object.assign({}, ...Registry.list(environment).map((module) => {
+    return Object.assign({}, ...Registry.list(environment, {
+        filter: (module) => module.type !== 'package'
+    }).map((module) => {
         let result = {};
 
         // Module
@@ -369,7 +373,9 @@ function getModulePaths(environment) {
         Path.resolve(Constants.PackagePath, 'node_modules'),
 
         // Plugin modules
-        ...Registry.list(environment).map((module) =>
+        ...Registry.list(environment, {
+            filter: (module) => module.type !== 'package'
+        }).map((module) =>
             Path.join(module.path, 'node_modules')
         )
     ];

@@ -40,6 +40,11 @@ export class Registry {
 
         // Ensure extension metadata has been fetched
         return Extension.fetch()
+            // Register package
+            .then(() => this.register(Constants.PackagePath, {
+                type: 'package',
+                environment
+            }))
             // Discover modules
             .then(() => this._discover(environment).then(() => {
                 this._discovered = true;
