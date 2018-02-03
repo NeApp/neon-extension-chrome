@@ -152,7 +152,15 @@ export class Registry {
         return modules;
     }
 
-    match(environment, path) {
+    match(environment, path, options) {
+        options = Merge({
+            type: {
+                include: null,
+                exclude: null
+            }
+        }, options || {});
+
+        // Find module matching the provided `path`
         path = Path.normalize(path);
 
         for(let p in this._modulesByPath[environment]) {
@@ -160,11 +168,29 @@ export class Registry {
                 continue;
             }
 
-            if(path.startsWith(p)) {
-                return this._modulesByPath[environment][p];
+            // Check if `path` matches the module path
+            if(!path.startsWith(p)) {
+                continue;
             }
+
+            // Found module
+            let module = this._modulesByPath[environment][p];
+
+            // Apply `type.include` filter
+            if(!IsNil(options.type.include) && options.type.include.indexOf(module.type) < 0) {
+                continue;
+            }
+
+            // Apply `type.exclude` filter
+            if(!IsNil(options.type.exclude) && options.type.exclude.indexOf(module.type) >= 0) {
+                continue;
+            }
+
+            // Module passed filters
+            return module;
         }
 
+        // No module found
         return null;
     }
 
