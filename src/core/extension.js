@@ -202,7 +202,6 @@ export class Extension {
 
                 'title',
                 'description',
-                'version',
 
                 // Required Permissions
                 'origins',
@@ -214,8 +213,7 @@ export class Extension {
             ]),
 
             // Generate version for environment
-            version: this.getVersion(),
-            version_name: this.getVersionName(environment)
+            version: this.getVersionName(environment)
         };
     }
 
