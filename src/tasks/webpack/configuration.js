@@ -291,10 +291,11 @@ export function createConfiguration(environment, outputPath) {
 
         resolve: {
             modules: [
-                'node_modules',
-
                 // Shared modules
-                Path.resolve(Constants.PackagePath, 'node_modules')
+                Path.resolve(Constants.PackagePath, 'node_modules'),
+                
+                // Local modules
+                'node_modules'
             ],
 
             alias: {
