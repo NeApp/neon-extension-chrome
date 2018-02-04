@@ -14,6 +14,10 @@ import {readJsonSync} from '../../core/json';
 
 const DependencyVersionRegex = /^\d+\.\d+\.\d+(\-\w+(\.\d+)?)?$/g;
 
+const IgnoredPackages = [
+    'webpack'
+];
+
 export class Validator {
     constructor() {
         this.dependencies = {};
@@ -64,6 +68,11 @@ export class Validator {
 
         // Ignore neon modules
         if(dep.name.startsWith('neon-extension-')) {
+            return false;
+        }
+
+        // Apply `IgnoredPackages` filter
+        if(IgnoredPackages.indexOf(dep.name) >= 0) {
             return false;
         }
 
