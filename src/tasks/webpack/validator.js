@@ -4,6 +4,7 @@ import IsNil from 'lodash-es/isNil';
 import Path from 'path';
 import SemanticVersion from 'semver';
 import Set from 'lodash-es/set';
+import UniqBy from 'lodash-es/uniqBy';
 
 import Extension from '../../core/extension';
 import Registry from '../../core/registry';
@@ -32,10 +33,11 @@ export class Validator {
 
         // Validate each module source
         module.reasons.forEach((source) => {
-            source = this._getSource(environment, source) || source;
+            let sources = this._getSources(environment, source) || source;
 
-            // Process module
-            this.processModuleDependency(environment, source.module.userRequest, module.userRequest)
+            for(let i = 0; i < sources.length; i++) {
+                this.processModuleDependency(environment, sources[i].module.userRequest, module.userRequest)
+            }
         });
     }
 
@@ -239,16 +241,24 @@ export class Validator {
         }
     }
 
-    _getSource(environment, source) {
-        while(!IsNil(source) && !IsNil(source.module.userRequest)) {
-            if(Registry.match(environment, source.module.userRequest)) {
-                return source;
-            }
-
-            source = source.module && source.module.reasons && source.module.reasons[0];
+    _getSources(environment, source) {
+        if(IsNil(source.module.userRequest)) {
+            return [source];
         }
 
-        return null;
+        if(Registry.match(environment, source.module.userRequest, { type: { exclude: 'package' } })) {
+            return [source];
+        }
+
+        let result = [];
+
+        for(let i = 0; i < source.module.reasons.length; i++) {
+            result.push.apply(result, this._getSources(environment, source.module.reasons[0]));
+        }
+
+        return UniqBy(result, (source) =>
+            source.module.userRequest || source.module.name
+        );
     }
 
     _parseDependency(request) {
