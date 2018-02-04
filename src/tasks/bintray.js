@@ -70,7 +70,7 @@ export function buildDescriptor(environment) {
             },
             {
                 "includePattern": "build/production/(MD5SUMS|webpack.*)",
-                "uploadPattern": "Neon-" + Extension.getVersion(environment) + "/$1"
+                "uploadPattern": "Neon-" + Extension.getVersionName(environment) + "/$1"
             }
         ],
 
