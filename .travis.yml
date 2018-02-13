@@ -3,8 +3,6 @@ node_js:
 - '7'
 before_install:
 - npm install -g npm@'>=5.5.1'
-- npm install -g @babel/core@7.0.0-beta.32
-- npm install -g @babel/node@7.0.0-beta.32
 - tools/install_modules.py $TRAVIS_BRANCH
 script:
 - git reset --hard
