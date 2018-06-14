@@ -7,6 +7,7 @@ before_install:
 install:
 - neb travis:install $TRAVIS_BRANCH
 - neb package:validate
+- git diff
 script:
 - npm run build
 deploy:
