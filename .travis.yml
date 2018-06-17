@@ -9,7 +9,7 @@ install:
 - neb package:validate
 - git diff
 script:
-- npm run build -- --debug
+- npm run build
 deploy:
 - provider: releases
   skip_cleanup: true
