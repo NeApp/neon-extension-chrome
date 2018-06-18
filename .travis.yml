@@ -11,14 +11,18 @@ install:
 script:
 - npm run build
 - npm run travis:test
+- npm run travis:coverage
 - npm run travis:lint
+after_success:
+- npm install coveralls
+- cat ./Build/Coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
 deploy:
 - provider: releases
   skip_cleanup: true
   api_key:
     secure: SQacOqUMCW5VuxNBL44Bm2rZuAbB0ocDcKfUT+b35Keb+czxlorxmvk+vwyHltU+YZg59SqXMlKmL8VS49QSkESxMqiJqN7qmOVoi3GVOdzL3IkdyMJuzG4LXnFrwFhZnH6mV7qKy39za1AxLDztulZUkDw9cnLh0VeWyABGMG2E/pcsGbGgvzBuMLvAcpNVTCUfEKgitd1XEZGKtewZjezzKa75905u94lr+0xBCtHvHctdPNz9u4z0zcE+mzXPndY6fKiNV+yZaC6Mt6EOX2qQEC5Agnd6BHM8k4c5mjVmbIpQP0qcy4eEm4JXLyIMCMN46swoT6fllmwZcY8qXheYAkpcZzDca+5Z+bKIV+2y7G7cohZJElhQfcSMla8v6rjAI7L8Np4OOqRX+WZVW4NcsZiXBJsVBID2Av1acTaM6C3bmPFfD8v62oV6v4VPjjtW02ChalMSwKdS64G3/WSiC3xQAUlsdcz8Npx6JvLnnogfIHGYryUs2k8r0eTlas7CpExpFNRNmHvCtA8RVuVpmID6r4uDruFxahbyB4uPD935n2t25LV3nCEh8ysEf0slvDw58Of24zv2N5w3idN1AMQM4ntskUPgIBs4KPHssBCkdFeJHiEVE9x47OJruSoxlthyZzeVwnZs4o/Eg8tY98+Kfc+SQ0zAaF8Qvmg=
   file_glob: true
-  file: build/production/Neon*.zip
+  file: Build/Production/Neon*.zip
   on:
     repo: NeApp/neon-extension-chrome
     tags: true
@@ -26,7 +30,7 @@ deploy:
   skip_cleanup: true
   key:
     secure: PlwDaiEyaObAHNmRMXz4yNTlmlboJYGpEazVL6Q4EN/nDy4JrxC08rTb3cTo4hDJCBaDX1+6m0Cc/Q5vXw3ZVLqosFVJu/3rpw3DkS+v0XaSKlq/hF6PBCCsp6Nnn9HnnMQHz3MPZ8LceldAzStG2zmTXCt9Q5Nea8a4QRR03N9UfcOX+ZxJOSGkXweUyDlYqBr2rd3VYRNPEgsv5kiBgokIozMAHuO1ZKEas+un7VpwrD6YutYfuhiEZhP0c+Fct00IISf0D8o6GhZMkhuW+1ehW1ow+exPVuoMZ8S0nvJea9r2LS7etaEmyAWa1i38bUVpFZT2Y9hzaltv3lSDTrHaswKYU8s5VjMhXpcgQabIiRYaCD3vuisTk7taktpG5by7n6kVkI+r8G3+Qdks0yUe6uizJnNWiaPy4mSacB9n4dbF21GEmPbT+43a7/HUHRKDj1Ay9E6nAdCawqM6jFflMf5ykUH4o30EIhkv/hvOsCU0tYWrzCXBH61SXpGJr5F7D0hkQmVnfRigfw6W95WC3gid+xTs7vM/7sZCIjTURxf4Vi1+EetzpUXnYTI0TCb71HXZjIKhDoYD/Jw/5H9PhkEXIXCcZ2kxw+gXg0B+NqRV/Gp4Lny8HLoZgnZKS+Ku/M6a+TmnLWC5z1It2SkSjzGUUNWK/HiW7hKB/Es=
-  file: build/production/bintray.json
+  file: Build/Production/bintray.json
   user: neapp-ci
   on:
     repo: NeApp/neon-extension-chrome
