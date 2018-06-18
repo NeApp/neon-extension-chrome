@@ -31,4 +31,4 @@
     npm run build
     ```
 
-    The built extension will now be available under `Neon-Chrome-<version>-sources/build/production/`.
+    The built extension will now be available under `Neon-Chrome-<version>-sources/Build/Production/`.
