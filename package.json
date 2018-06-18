@@ -40,6 +40,7 @@
   },
   "scripts": {
     "build": "neb build --browser chrome --environment production",
+    "travis:coverage": "neb travis:coverage",
     "travis:lint": "neb travis:lint",
     "travis:test": "neb travis:test"
   }
