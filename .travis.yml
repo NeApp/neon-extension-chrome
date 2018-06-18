@@ -10,6 +10,8 @@ install:
 - git diff
 script:
 - npm run build
+- npm run travis:test
+- npm run travis:lint
 deploy:
 - provider: releases
   skip_cleanup: true
