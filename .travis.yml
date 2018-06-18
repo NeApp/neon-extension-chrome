@@ -13,6 +13,7 @@ script:
 - npm run travis:test
 - npm run travis:coverage
 - npm run travis:lint
+- if [ ! -f ./Build/Coverage/lcov.info ]; then exit 1; fi
 after_success:
 - npm install coveralls
 - cat ./Build/Coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
