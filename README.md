@@ -1,5 +1,5 @@
 # Neon Extension for Chrome
-[![](https://img.shields.io/travis/NeApp/neon-extension-chrome.svg)](https://travis-ci.org/NeApp/neon-extension-chrome) [![](https://img.shields.io/github/release/NeApp/neon-extension-chrome.svg?label=stable)](https://github.com/NeApp/neon-extension-chrome/releases) [![](https://img.shields.io/bintray/v/neapp/neon-extension/neon-extension-chrome.svg?label=latest)](https://bintray.com/neapp/neon-extension/neon-extension-chrome) ![](https://img.shields.io/github/license/NeApp/neon-extension-chrome.svg)
+[![](https://img.shields.io/travis/NeApp/neon-extension-chrome.svg)](https://travis-ci.org/NeApp/neon-extension-chrome) [![](https://img.shields.io/coveralls/github/NeApp/neon-extension-chrome/master.svg)](https://coveralls.io/github/NeApp/neon-extension-chrome) [![](https://img.shields.io/github/release/NeApp/neon-extension-chrome.svg?label=stable)](https://github.com/NeApp/neon-extension-chrome/releases) [![](https://img.shields.io/bintray/v/neapp/neon-extension/neon-extension-chrome.svg?label=latest)](https://bintray.com/neapp/neon-extension/neon-extension-chrome) ![](https://img.shields.io/github/license/NeApp/neon-extension-chrome.svg)
 
 ### Issues
 
@@ -11,58 +11,20 @@ Issues can be reported in the [neon-extension](https://github.com/NeApp/neon-ext
  - Extension Version
  - Operating System
 
-## Dependencies
+### Modules
 
-| Name                                                                                                        | Status                                                                                                                                                      | Coverage                                                                                                                                             |
-|-------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [neon-extension-build](https://github.com/NeApp/neon-extension-build)                                       | [![](https://img.shields.io/travis/NeApp/neon-extension-build.svg)](https://travis-ci.org/NeApp/neon-extension-build)                                       | [![](https://img.shields.io/coveralls/github/NeApp/neon-extension-build/master.svg)](https://coveralls.io/github/NeApp/neon-extension-build)         |
-| [neon-extension-core](https://github.com/NeApp/neon-extension-core)                                         | [![](https://img.shields.io/travis/NeApp/neon-extension-core.svg)](https://travis-ci.org/NeApp/neon-extension-core)                                         | [![](https://img.shields.io/coveralls/github/NeApp/neon-extension-core/master.svg)](https://coveralls.io/github/NeApp/neon-extension-core)           |
-| [neon-extension-framework](https://github.com/NeApp/neon-extension-framework)                               | [![](https://img.shields.io/travis/NeApp/neon-extension-framework.svg)](https://travis-ci.org/NeApp/neon-extension-framework)                               | [![](https://img.shields.io/coveralls/github/NeApp/neon-extension-framework/master.svg)](https://coveralls.io/github/NeApp/neon-extension-framework) |
-| **Destinations**                                                                                            |                                                                                                                                                             |  |
-| [neon-extension-destination-lastfm](https://github.com/NeApp/neon-extension-destination-lastfm)             | [![](https://img.shields.io/travis/NeApp/neon-extension-destination-lastfm.svg)](https://travis-ci.org/NeApp/neon-extension-destination-lastfm)             |  |
-| [neon-extension-destination-librefm](https://github.com/NeApp/neon-extension-destination-librefm)           | [![](https://img.shields.io/travis/NeApp/neon-extension-destination-librefm.svg)](https://travis-ci.org/NeApp/neon-extension-destination-librefm)           |  |
-| [neon-extension-destination-listenbrainz](https://github.com/NeApp/neon-extension-destination-listenbrainz) | [![](https://img.shields.io/travis/NeApp/neon-extension-destination-listenbrainz.svg)](https://travis-ci.org/NeApp/neon-extension-destination-listenbrainz) |  |
-| **Sources**                                                                                                 |                                                                                                                                                             |  |
-| [neon-extension-source-googlemusic](https://github.com/NeApp/neon-extension-source-googlemusic)             | [![](https://img.shields.io/travis/NeApp/neon-extension-source-googlemusic.svg)](https://travis-ci.org/NeApp/neon-extension-source-googlemusic)             |  |
-| [neon-extension-source-spotify](https://github.com/NeApp/neon-extension-source-spotify)                     | [![](https://img.shields.io/travis/NeApp/neon-extension-source-spotify.svg)](https://travis-ci.org/NeApp/neon-extension-source-spotify)                     |  |
-
-## Build
-
-### Production Builds
-
-**Requirements**
-
- - node
- - npm
- - *git (optional)*
-
-**Steps**
-
-1. **Download build files**
-
-    Clone the repository, and checkout the desired version:
-
-    ```
-    git clone git@github.com:NeApp/neon-extension-chrome.git
-    git checkout (version)
-    ```
-
-    or download the release archive:
-
-    ```
-    wget https://github.com/NeApp/neon-extension-chrome/archive/(version).zip
-    ```
-
-2. **Install dependencies**
-
-    ```
-    npm install
-    ```
-
-3. **Run build**
-
-    ```
-    npm run build
-    ```
-
-    Build artifacts will be available at `Build/Production/`
+| Name                                                                             | Status                                                                                                                                                      | Coverage                                                                                                                                                                            |
+|----------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [Build Tools](https://github.com/NeApp/neon-extension-build)                     | [![](https://img.shields.io/travis/NeApp/neon-extension-build.svg)](https://travis-ci.org/NeApp/neon-extension-build)                                       | [![](https://img.shields.io/coveralls/github/NeApp/neon-extension-build/master.svg)](https://coveralls.io/github/NeApp/neon-extension-build)                                        |
+| [Core](https://github.com/NeApp/neon-extension-core)                             | [![](https://img.shields.io/travis/NeApp/neon-extension-core.svg)](https://travis-ci.org/NeApp/neon-extension-core)                                         | [![](https://img.shields.io/coveralls/github/NeApp/neon-extension-core/master.svg)](https://coveralls.io/github/NeApp/neon-extension-core)                                          |
+| [Framework](https://github.com/NeApp/neon-extension-framework)                   | [![](https://img.shields.io/travis/NeApp/neon-extension-framework.svg)](https://travis-ci.org/NeApp/neon-extension-framework)                               | [![](https://img.shields.io/coveralls/github/NeApp/neon-extension-framework/master.svg)](https://coveralls.io/github/NeApp/neon-extension-framework)                                |
+| **Destinations**                                                                 |                                                                                                                                                             |  |
+| [Last.fm](https://github.com/NeApp/neon-extension-destination-lastfm)            | [![](https://img.shields.io/travis/NeApp/neon-extension-destination-lastfm.svg)](https://travis-ci.org/NeApp/neon-extension-destination-lastfm)             | [![](https://img.shields.io/coveralls/github/NeApp/neon-extension-destination-lastfm/master.svg)](https://coveralls.io/github/NeApp/neon-extension-destination-lastfm)              |
+| [Libre.fm](https://github.com/NeApp/neon-extension-destination-librefm)          | [![](https://img.shields.io/travis/NeApp/neon-extension-destination-librefm.svg)](https://travis-ci.org/NeApp/neon-extension-destination-librefm)           | [![](https://img.shields.io/coveralls/github/NeApp/neon-extension-destination-librefm/master.svg)](https://coveralls.io/github/NeApp/neon-extension-destination-librefm)            |
+| [ListenBrainz](https://github.com/NeApp/neon-extension-destination-listenbrainz) | [![](https://img.shields.io/travis/NeApp/neon-extension-destination-listenbrainz.svg)](https://travis-ci.org/NeApp/neon-extension-destination-listenbrainz) | [![](https://img.shields.io/coveralls/github/NeApp/neon-extension-destination-listenbrainz/master.svg)](https://coveralls.io/github/NeApp/neon-extension-destination-listenbrainz)  |
+| [Trakt.tv](https://github.com/NeApp/neon-extension-destination-trakt)            | [![](https://img.shields.io/travis/NeApp/neon-extension-destination-trakt.svg)](https://travis-ci.org/NeApp/neon-extension-destination-trakt)               | [![](https://img.shields.io/coveralls/github/NeApp/neon-extension-destination-trakt/master.svg)](https://coveralls.io/github/NeApp/neon-extension-destination-trakt)                |
+| **Sources**                                                                      |                                                                                                                                                             |  |
+| [Amazon Prime Video](https://github.com/NeApp/neon-extension-source-amazonvideo) | [![](https://img.shields.io/travis/NeApp/neon-extension-source-amazonvideo.svg)](https://travis-ci.org/NeApp/neon-extension-source-amazonvideo)             | [![](https://img.shields.io/coveralls/github/NeApp/neon-extension-source-amazonvideo/master.svg)](https://coveralls.io/github/NeApp/neon-extension-source-amazonvideo)              |
+| [Google Play Music](https://github.com/NeApp/neon-extension-source-googlemusic)  | [![](https://img.shields.io/travis/NeApp/neon-extension-source-googlemusic.svg)](https://travis-ci.org/NeApp/neon-extension-source-googlemusic)             | [![](https://img.shields.io/coveralls/github/NeApp/neon-extension-source-googlemusic/master.svg)](https://coveralls.io/github/NeApp/neon-extension-source-googlemusic)              |
+| [Netflix](https://github.com/NeApp/neon-extension-source-netflix)                | [![](https://img.shields.io/travis/NeApp/neon-extension-source-netflix.svg)](https://travis-ci.org/NeApp/neon-extension-source-netflix)                     | [![](https://img.shields.io/coveralls/github/NeApp/neon-extension-source-netflix/master.svg)](https://coveralls.io/github/NeApp/neon-extension-source-netflix)                      |
+| [Spotify](https://github.com/NeApp/neon-extension-source-spotify)                | [![](https://img.shields.io/travis/NeApp/neon-extension-source-spotify.svg)](https://travis-ci.org/NeApp/neon-extension-source-spotify)                     | [![](https://img.shields.io/coveralls/github/NeApp/neon-extension-source-spotify/master.svg)](https://coveralls.io/github/NeApp/neon-extension-source-spotify)                      |
