@@ -1,6 +1,6 @@
 {
   "name": "neon-extension-chrome",
-  "version": "2.0.0-beta.4",
+  "version": "2.0.0-beta.5",
   "description": "Neon Extension for Chrome",
   "keywords": [
     "neon",
@@ -23,7 +23,7 @@
     "url": "https://github.com/NeApp/neon-extension-chrome"
   },
   "dependencies": {
-    "neon-extension-build": "file:neon-extension-build-2.0.0-beta.3.tgz",
+    "neon-extension-build": "file:neon-extension-build-2.0.0-beta.5.tgz",
     "neon-extension-core": "file:neon-extension-core-2.0.0-beta.4.tgz",
     "neon-extension-destination-lastfm": "file:neon-extension-destination-lastfm-2.0.0-beta.3.tgz",
     "neon-extension-destination-librefm": "file:neon-extension-destination-librefm-2.0.0-beta.3.tgz",
