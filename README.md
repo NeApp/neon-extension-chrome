@@ -1,4 +1,4 @@
-# Neon Extension for Chrome
+# Radon Extension for Chrome
 [![](https://img.shields.io/travis/NeApp/neon-extension-chrome.svg)](https://travis-ci.org/NeApp/neon-extension-chrome) [![](https://img.shields.io/coveralls/github/NeApp/neon-extension-chrome/master.svg)](https://coveralls.io/github/NeApp/neon-extension-chrome) [![](https://img.shields.io/github/release/NeApp/neon-extension-chrome.svg?label=stable)](https://github.com/NeApp/neon-extension-chrome/releases) [![](https://img.shields.io/bintray/v/neapp/neon-extension/neon-extension-chrome.svg?label=latest)](https://bintray.com/neapp/neon-extension/neon-extension-chrome) ![](https://img.shields.io/github/license/NeApp/neon-extension-chrome.svg)
 
 ### Issues
