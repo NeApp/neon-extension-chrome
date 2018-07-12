@@ -9,7 +9,7 @@
 
 ### Build
 
-1. Download the source archive from [GitHub](https://github.com/NeApp/neon-extension-chrome/releases) with the name `Radon-Chrome-<version>-sources.zip` and extract the contents of the archive to a temporary directory.
+1. Download the source archive from [GitHub](https://github.com/RadonApp/radon-extension-chrome/releases) with the name `Radon-Chrome-<version>-sources.zip` and extract the contents of the archive to a temporary directory.
 
 2. Open a command prompt or shell, and CD to the source directory.
 
@@ -23,7 +23,7 @@
     npm install
     ```
 
-    Additional extension modules will now be available under `Radon-Chrome-<version>-sources/node_modules/neon-extension-*`
+    Additional extension modules will now be available under `Radon-Chrome-<version>-sources/node_modules/@radon-extension/`
 
 4. Build the extension
 
