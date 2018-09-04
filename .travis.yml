@@ -33,7 +33,7 @@ deploy:
   key:
     secure: YPeCHU73TazREdFCfsetbl1xwSIXgIkRmqlroPzg8+9FbyeEoYBH1H374Nrn8uPLSMu2jS52jqCXu3rl7XgiECStok6jvlZz7BiRQzyuHtYrigYs7zBo75vu1LsW2/IXSZZvH2jMXy3fchj/UC/sz4N9+5GMkYLV0NUxYr+CnLCDVJSc9m+EUtnAUu0JuxKQrryOdmMfAythqfv45xqZFJf0ORrt1QROJaL3NE6ybFzmoileiQfH6PzVMN8PPO4lJODDHNCTZbi8l3PA7+pGjmHZ46eE8dcMiy7BN0t5IOPmnMJzGrbTnBXzdQHwcJudeC9nGuOZtQTAqB7u2XuP8QQiLVJLpO0bFUdw6rm1ciMsVuY2M+WebFBXEnSim8B1BgYAbI1V3lZxr2/Y5M9PGYxMPdlBR000NkTwoKkN6OC/pWNHg4VWy/wg4xxRvG77f22XZxeC/pv3MqPv7XLTaVxshf2Fibz6VuIVh6hYxj4Yu1iez+s1sllRPrw9D3nTQKzSN0kakXGIwquCU3JbXR7S9+mLHEvHiIIHy7l13Bha1KrB/phyJF1ru3DAUv7QGctJnUTu72fpFU/ZwYVSLNEWL1GP8/Fs1kOfEq9iYpWubH6HWOoX2+HfymhhLQNsa+amYRtTuRAMmNvQDQkVEBx6RFSVM9sTZA479GZq8KA=
   file: Build/Production/bintray.json
-  user: neapp-ci
+  user: radon-ci
   on:
     repo: RadonApp/radon-extension-chrome
     all_branches: true
